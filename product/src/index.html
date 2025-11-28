@@ -1,29 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>年会抽奖</title>
+    <title>W3JFi-Lottery | Premium Lottery Experience</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <meta name="description" content="W3JFi-Lottery - A premium, luxury lottery application with festive-themed animations" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
 
-  <body>
+  <body data-theme="default">
     <script src="./lib/three.min.js"></script>
     <script src="./lib/tween.min.js"></script>
     <script src="./lib/TrackballControls.js"></script>
     <script src="./lib/CSS3DRenderer.js"></script>
     <script src="./lib/ajax.js"></script>
 
+    <!-- Theme Particles Container -->
+    <div id="themeParticles" class="theme-particles"></div>
+
     <div class="canvas-box">
-      <canvas id="canvas">你的浏览器不支持canvas</canvas>
+      <canvas id="canvas">Your browser does not support canvas</canvas>
+    </div>
+
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+      <div class="theme-toggle" id="themeToggle" title="Select Theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </div>
+      <div class="theme-dropdown" id="themeDropdown">
+        <div class="theme-option" data-theme="default">
+          <span class="theme-icon">✨</span>
+          <span class="theme-name">Default</span>
+        </div>
+        <div class="theme-option" data-theme="christmas">
+          <span class="theme-icon">🎄</span>
+          <span class="theme-name">Christmas</span>
+        </div>
+        <div class="theme-option" data-theme="newyear">
+          <span class="theme-icon">🎆</span>
+          <span class="theme-name">New Year</span>
+        </div>
+        <div class="theme-option" data-theme="gala">
+          <span class="theme-icon">⭐</span>
+          <span class="theme-name">Gala Night</span>
+        </div>
+      </div>
     </div>
 
     <div class="music">
       <audio id="music" src="./data/music.mp3" class="music-item" loop></audio>
-      <div id="musicBox" class="music-box" title="播放/暂停背景音乐">Music</div>
+      <div id="musicBox" class="music-box" title="Play/Pause Background Music">🎵</div>
     </div>
 
     <div id="prizeBar"></div>
@@ -31,17 +65,23 @@
     <div id="container"></div>
 
     <div id="menu">
-      <button id="enter">进入抽奖</button>
+      <button id="enter" class="premium-btn primary">Enter Lottery</button>
       <div id="lotteryBar" class="none">
-        <button id="lottery">开始抽奖</button>
-        <button id="reLottery">重新抽奖</button>
+        <button id="lottery" class="premium-btn primary">Start Draw</button>
+        <button id="reLottery" class="premium-btn secondary">Redraw</button>
         <div class="fixed-bar">
-          <button id="save" class="fixed-btn">导出抽奖结果</button>
-          <button id="reset" class="fixed-btn">重置</button>
+          <button id="save" class="fixed-btn premium-btn">Export Results</button>
+          <button id="reset" class="fixed-btn premium-btn danger">Reset All</button>
         </div>
       </div>
     </div>
 
     <div class="qipao-container"></div>
+
+    <!-- Branding Footer -->
+    <div class="branding-footer">
+      <span class="brand-text">W3JFi-Lottery</span>
+      <span class="brand-tagline">Premium Lottery Experience</span>
+    </div>
   </body>
 </html>

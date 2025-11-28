@@ -1,21 +1,21 @@
 {
-    "name": "http-mini",
-    "version": "1.0.4",
-    "description": "a simple static web server base on Express",
+    "name": "w3jfi-lottery-server",
+    "version": "2.0.0",
+    "description": "W3JFi-Lottery Server - Premium Lottery Backend",
     "main": "index.js",
     "bin": {
-        "http-mini": "index.js"
+        "w3jfi-lottery": "index.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "moshang",
+    "author": "W3JFi",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/moshang-xc/web-server.git"
+        "url": "git+https://github.com/W3JDev/W3Fi-lottery.git"
     },
-    "homepage": "https://github.com/moshang-xc/web-server#readme",
-    "license": "ISC",
+    "homepage": "https://github.com/W3JDev/W3Fi-lottery#readme",
+    "license": "MIT",
     "dependencies": {
         "body-parser": "^1.18.2",
         "chokidar": "^2.0.3",

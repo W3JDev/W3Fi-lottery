@@ -1,5 +1,33 @@
-#npm
+# Dependencies
 node_modules/
+
+# Build outputs
 dist/
+product/dist/
+
+# Cache files
 temp.json
 error.json
+*.log
+.cache/
+
+# Server cache
+server/cache/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel/
