@@ -5,17 +5,17 @@ let defaultType = 0;
 
 let prizes;
 const DEFAULT_MESS = [
-  "我是该抽中一等奖还是一等奖呢，纠结ing...",
-  "听说要提前一个月吃素才能中大奖喔！",
-  "好想要一等奖啊！！！",
-  "一等奖有没有人想要呢？",
-  "五等奖也不错，只要自己能中奖就行",
-  "祝大家新年快乐！",
-  "中不中奖不重要，大家吃好喝好。",
-  "新年，祝福大家事事顺遂。",
-  "作为专业陪跑的我，我就看看你们有谁跟我一样",
-  "新的一年祝福大家越来越好！",
-  "来年再战！！！"
+  "Should I win the grand prize or the grand prize? Decisions...",
+  "They say you need to eat healthy for a month to win big!",
+  "I really want the first prize!",
+  "Does anyone want the grand prize?",
+  "Fifth prize is fine too, as long as I win!",
+  "Happy New Year to everyone!",
+  "Winning isn't everything, enjoy the party!",
+  "Best wishes for the new year, may all your dreams come true.",
+  "As a professional bystander, I'm just here to watch...",
+  "Wishing everyone a prosperous new year!",
+  "Better luck next time!"
 ];
 
 let lastDanMuList = [];
@@ -156,9 +156,9 @@ function setPrizes(pri) {
 function showPrizeList(currentPrizeIndex) {
   let currentPrize = prizes[currentPrizeIndex];
   if (currentPrize.type === defaultType) {
-    currentPrize.count === "不限制";
+    currentPrize.count === "Unlimited";
   }
-  let htmlCode = `<div class="prize-mess">正在抽取<label id="prizeType" class="prize-shine">${currentPrize.text}</label><label id="prizeText" class="prize-shine">${currentPrize.title}</label>，剩余<label id="prizeLeft" class="prize-shine">${currentPrize.count}</label>个</div><ul class="prize-list">`;
+  let htmlCode = `<div class="prize-mess">Now Drawing<label id="prizeType" class="prize-shine">${currentPrize.text}</label><label id="prizeText" class="prize-shine">${currentPrize.title}</label>, <label id="prizeLeft" class="prize-shine">${currentPrize.count}</label> remaining</div><ul class="prize-list">`;
   prizes.forEach(item => {
     if (item.type === defaultType) {
       return true;
@@ -247,9 +247,9 @@ let setPrizeData = (function () {
     }
 
     if (currentPrizeIndex === 0) {
-      prizeElement.prizeType.textContent = "特别奖";
+      prizeElement.prizeType.textContent = "Special Prize";
       prizeElement.prizeText.textContent = " ";
-      prizeElement.prizeLeft.textContent = "不限制";
+      prizeElement.prizeLeft.textContent = "Unlimited";
       return;
     }
 

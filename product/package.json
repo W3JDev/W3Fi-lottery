@@ -1,16 +1,16 @@
 {
-  "name": "lucky",
-  "version": "1.0.0",
-  "description": "抽奖",
+  "name": "w3jfi-lottery",
+  "version": "2.0.0",
+  "description": "W3JFi-Lottery - Premium Lottery Experience with Festive Themes",
   "main": "index.js",
   "scripts": {
     "start": "cd dist && node ../../server/index.js 8888",
     "serve": "npm run start",
-    "build": "webpack --mode=production --progress --colors",
-    "dev": "webpack-dev-server --config webpack.dev.js --mode=development --progress --colors"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode=production --progress --colors",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --config webpack.dev.js --mode=development --progress --colors"
   },
-  "author": "moshang",
-  "license": "ISC",
+  "author": "W3JFi",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^8.1.0",
     "babel-core": "^6.26.0",
